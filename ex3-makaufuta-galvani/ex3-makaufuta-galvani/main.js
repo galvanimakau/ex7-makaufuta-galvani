@@ -25,4 +25,8 @@ app.get('/plus/:n1/:n2', function(request, response) {
 app.get('/min/:n1/:n2', function(request, response) {
     var Antwoord = parseInt(request.params.n1) - parseInt(request.params.n2); //berekening min
     response.send("De antwoord is: " + Antwoord);
-}); // functie min
+}); // functie 
+
+//server starten
+app.listen(4567); //poort definieren
+
