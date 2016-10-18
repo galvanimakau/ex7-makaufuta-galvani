@@ -8,17 +8,21 @@ app.use(bodyparser.json()); // automatische json-body parsers van request MET me
 
 //functie aanmaken
 app.get('/maal/:n1/:n2', function(request, response) {
-    var Antwoord = parseInt(request.params.n1) * parseInt(request.params.n2);
+    var Antwoord = parseInt(request.params.n1) * parseInt(request.params.n2); //berekening maal
+    response.send("De antwoord is: " + Antwoord);
 }); // functie maal
 
 app.get('/delen/:n1/:n2', function(request, response) {
-    var Antwoord = parseInt(request.params.n1) / parseInt(request.params.n2);
+    var Antwoord = parseInt(request.params.n1) / parseInt(request.params.n2);//berekening delen
+    response.send("De antwoord is: " + Antwoord);
 }); // functie delen
 
 app.get('/plus/:n1/:n2', function(request, response) {
-    var Antwoord = parseInt(request.params.n1) + parseInt(request.params.n2);
+    var Antwoord = parseInt(request.params.n1) + parseInt(request.params.n2); //berekening plus
+    response.send("De antwoord is: " + Antwoord);
 }); // functie plus
 
 app.get('/min/:n1/:n2', function(request, response) {
-    var Antwoord = parseInt(request.params.n1) - parseInt(request.params.n2);
+    var Antwoord = parseInt(request.params.n1) - parseInt(request.params.n2); //berekening min
+    response.send("De antwoord is: " + Antwoord);
 }); // functie min
