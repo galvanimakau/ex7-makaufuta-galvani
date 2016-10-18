@@ -30,3 +30,7 @@ app.get('/min/:n1/:n2', function(request, response) {
 //server starten
 app.listen(4567); //poort definieren
 
+//logs laten verschijnen
+console.log("Server started");// laten verschijnen
+
+//meegewerkt met Jeroen van den Bergh en jonnick Makau futa 
