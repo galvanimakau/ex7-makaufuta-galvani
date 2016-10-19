@@ -2,7 +2,7 @@
 var express = require('express'); //webserver
 var bodyparser = require('body-parser'); //extensie op express
 var app = express(); // webserver variabel
-
+var calculated = [];
 //bodyparser bevestigen
 app.use(bodyparser.urlencoded({
     extended:true
