@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GIT: Rekenmachine</title>
+</head>
+<body>
+<form name="rekenmachine" >
+<table width="18%" border="1" bgcolor= "#6699CC">
+	<tr>
+			<td>
+	<input type= "text" name="antwoord" value="" style= background-color:#ffffcc  >
+			</td>
+	</tr>
+	<tr>
+			<td>
+			<input type="button" value="7" onClick="document.rekenmachine.antwoord.value+='7'" name="zeven"  style= background-color:#ffffcc >
+			<input type="button" value="8" onClick="document.rekenmachine.antwoord.value+='8'" name="acht" style= background-color:#ffffcc >
+			<input type="button" value="9" onClick="document.rekenmachine.antwoord.value+='9'" name="negen" style= background-color:#ffffcc >
+			<input type="button" value="/" onClick="document.rekenmachine.antwoord.value+='/'" name="delen" style= background-color:#ffffcc >
+			 <br>
+			<input type="button" value="4" onClick="document.rekenmachine.antwoord.value+='4'" name="vier" style= background-color:#ffffcc >
+			<input type="button" value="5" onClick="document.rekenmachine.antwoord.value+='5'" name="vijf" style= background-color:#ffffcc >
+			<input type="button" value="6" onClick="document.rekenmachine.antwoord.value+='6'" name="zes" style= background-color:#ffffcc >
+			<input type="button" value="*" onClick="document.rekenmachine.antwoord.value+='*'" name="mal" style= background-color:#ffffcc >
+			<br>
+			<input type="button" value="1" onClick="document.rekenmachine.antwoord.value+='1'" name="een" style= background-color:#ffffcc >
+			<input type="button" value="2" onClick="document.rekenmachine.antwoord.value+='2'" name="twee" style= background-color:#ffffcc >
+			<input type="button" value="3" onClick="document.rekenmachine.antwoord.value+='3'" name="drie" style= background-color:#ffffcc >
+			<input type="button" value="+" onClick="document.rekenmachine.antwoord.value+='+'" name="plus" style= background-color:#ffffcc >
+			<br>
+			<input type="submit" value="=" onClick="document.rekenmachine.antwoord.value=eval(document.rekenmachine.antwoord.value)" name="gelijk" style= background-color:#ffffcc >
+			<input type="button" value="0" onClick="document.rekenmachine.antwoord.value+='0'" name="nul" style= background-color:#ffffcc >
+			<input type="button" value="." onClick="document.rekenmachine.antwoord.value+='.'" name="punt" style= background-color:#ffffcc >   
+			<input type="button" value="-" onClick="document.rekenmachine.antwoord.value+='-'" name="min" style= background-color:#ffffcc >
+			<br>
+			<input type="Reset" value="          Wissen          " name="wissen" style= background-color:#ffffcc>
+			</td>
+	</tr>
+</table>
+	</form>
+</body>
+</html>
