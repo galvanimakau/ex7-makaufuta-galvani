@@ -2,7 +2,8 @@
 var express = require('express'); //webserver
 var bodyparser = require('body-parser'); //extensie op express
 var app = express(); // webserver variabel
-var calculated = [];
+var calculated = []; // array aanmaken
+
 //bodyparser bevestigen
 app.use(bodyparser.urlencoded({
     extended:true
@@ -18,6 +19,11 @@ console.log("Server started"); //laten verschijnen
 //rekenmachine halen van html
 app.get("/", function(response){
     response.sendFile(__dirname + '/calculator.html');
+});
+
+//behouden van de calculated
+app.get("/calculated", function(response){
+    response.send(calculated);
 });
 
 //rekenmachine posten op een website
