@@ -28,6 +28,11 @@ app.get("/calculated", function(response){
 
 //rekenmachine posten op een website
 app.post("/", function(request, response){
+    //calculation
     var calculation = eval (request.body.display);
     console.log(calculation);
+    //calculated
+    var calcul = request.body.display;
+    calculated.pust({"calcul": calcul, "calculated":calculation});
+    response.status(201).send(calculated); // nieuwe pagina openen
 });
