@@ -5,3 +5,7 @@ var app = express(); // webserver variabel
 
 //applicatie werkbaar maken
 app.use(bodyparser.json()); //automatische json-body
+
+//server starten
+app.listen(4567); //poort definieren
+console.log("Server started"); //laten verschijnen
