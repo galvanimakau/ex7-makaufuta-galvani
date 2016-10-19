@@ -19,7 +19,7 @@ console.log("Server started"); //laten verschijnen
 
 //rekenmachine halen van html
 app.get("/", function(response){
-    response.sendFile(__dirname + '/calculator.html');
+    response.sendFile(__dirname + '/rekenmachine.html');
 });
 
 //behouden van de calculated
