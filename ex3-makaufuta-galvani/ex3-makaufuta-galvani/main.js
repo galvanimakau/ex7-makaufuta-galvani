@@ -3,6 +3,11 @@ var express = require('express'); //webserver
 var bodyparser = require('body-parser'); //extensie op express
 var app = express(); // webserver variabel
 
+//bodyparser bevestigen
+app.use(bodyparser.urlencoded({
+    extended:true
+}));
+
 //applicatie werkbaar maken
 app.use(bodyparser.json()); //automatische json-body
 
