@@ -9,3 +9,8 @@ app.use(bodyparser.json()); //automatische json-body
 //server starten
 app.listen(4567); //poort definieren
 console.log("Server started"); //laten verschijnen
+
+//rekenmachine halen uit html
+app.get("/", function(response){
+    response.sendFile(__dirname + '/calculator.html');
+});
