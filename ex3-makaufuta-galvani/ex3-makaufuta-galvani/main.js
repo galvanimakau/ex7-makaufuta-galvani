@@ -18,12 +18,12 @@ app.listen(4567); //poort definieren
 console.log("Server started"); //laten verschijnen
 
 //rekenmachine halen van html
-app.get("/", function(response){
-    response.sendFile(__dirname + '/rekenmachine.html');
+app.get("/", function(request, response){
+    response.sendfile(__dirname + '/rekenmachine.html');
 });
 
 //behouden van de calculated
-app.get("/calculated", function(response){
+app.get("/calculated", function(request, response){
     response.send(calculated);
 });
 
@@ -34,6 +34,6 @@ app.post("/", function(request, response){
     console.log(calculation);
     //calculated
     var calcul = request.body.display;
-    calculated.pust({"calcul": calcul, "calculated":calculation});
+    calculated.push({"calcul": calcul, "calculated":calculation});
     response.status(201).send(calculated); // nieuwe pagina openen
 });
