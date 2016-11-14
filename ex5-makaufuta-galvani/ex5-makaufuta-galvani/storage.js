@@ -47,3 +47,4 @@ module.exports = {
         return this.locaties[id];
     }
 };
+ 
