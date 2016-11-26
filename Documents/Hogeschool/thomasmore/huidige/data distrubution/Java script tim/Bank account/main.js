@@ -1,3 +1,4 @@
+// PRACTISE 4
 //var account = new Object();
 var account = function(mail, balance){
     this.mail = mail;
@@ -43,3 +44,75 @@ function getAccount(username)
 }
 
 console.log(acc1, acc2, accounts);
+
+// PRACTISE 3
+/*var account = 123;
+ var amount = ;
+ 
+ function deposit (account, amount)
+ {
+ if (account == 123){
+ amount = + 3;
+ }
+ else {
+ amount;
+ }
+ }
+ 
+ function withdraw (account, amount)
+ {
+ {
+ 
+ }*/
+var account = new Object();
+account.balance = 0;
+
+function deposit(account, amount)
+{
+    account.balance += parseInt(amount);
+}
+function withdraw(account, amount)
+{
+    account.balance -= parseInt(amount);
+}
+function balance(account)
+{
+    console.log('dat is uw balance ' + account.balance);
+    return account.balance;
+}
+balance(account);
+deposit(account, 100);
+balance(account);
+withdraw(account, -50);
+balance(account);
+
+var accounts = [{email: "account3@hotmail.com", balance: 10}, {email: "account4@hotmail.com", balance: 10}];
+//var username = []; --> hebben wij al 
+
+function createAccount(account)
+{
+    accounts.push(account);
+}
+createAccount({email: "account1@hotmail.com", balance: 10});
+createAccount({email: "account2@hotmail.com", balance: 30});
+
+function getAccount(username)
+{
+    var rtnAccount;
+    accounts.forEach(function (acc) {
+        if (acc.email === username) {
+            rtnAccount = acc;
+        }
+        console.log(acc.email);
+    });
+    /*  for (var i=0; i<accounts.length; i++){
+     if (accounts[i].email === a){
+     return accounts[i];
+     }
+     }*/
+    return rtnAccount;
+}
+
+//console.log(accounts);
+
+console.log(getAccount("account11@hotmail.com"));
