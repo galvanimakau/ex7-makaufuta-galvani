@@ -27,15 +27,15 @@ var url = new Settings("/drones?format=json");
 
 var droneMem = [];
 
-request(Settings, function (error, response, dronesString) {
+request(url, function (error, response, dronesString) {
 	var drones = JSON.parse(dronesString);
 	//console.log(drones);
 	console.log("***************************************************************************");
-	drones.forEach(function (response) {
+	drones.forEach(function (drone) {
 		var IdSettings = new Settings("/drones/" + drone.id + "?format=json")
-		request(droneSettings, function (error, response, droneString) {
+		request(IdSettings, function (error, response, droneString) {
 			var drone = JSON.parse(droneString);
-			droneMem.push(new Drone(drone.name, drone.mac_address, drone.id, date_first_record));
+			droneMem.push(new Drone(drone.name, drone.mac_address, drone.id));
 			console.log(droneMem);
 			console.log("***************************************************************************");
 		});
