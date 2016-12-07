@@ -29,7 +29,7 @@ request(Settings, function (error, response, dronesString) {
 	var drones = JSON.parse(dronesString);
 	//console.log(drones);
 	console.log("***************************************************************************");
-	drones.forEach(function (drone) {
+	drones.forEach(function (response) {
 		var droneSettings = new Settings("/drones/" + drone.id + "?format=json")
 		request(droneSettings, function (error, response, droneString) {
 			var drone = JSON.parse(droneString);
@@ -43,7 +43,7 @@ request(Settings, function (error, response, dronesString) {
 	var drones = JSON.parse(dronesString);
 	console.log(drones);
 	console.log("***************************************************************************");
-	drones.forEach(function (response) {
+	drones.forEach(function (drone) {
 		var droneSettings = new Settings("/drones/" + drone.id + "?format=json")
 		request(droneSettings, function (error, response, droneString) {
 			var drone = JSON.parse(droneString);
