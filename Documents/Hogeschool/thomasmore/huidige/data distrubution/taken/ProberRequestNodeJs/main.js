@@ -19,6 +19,8 @@ var Settings = function (url) {
 var Drone = function (name, mac) {
 	this.name = name;
 	this.mac = mac;
+        this.id = id;
+        this.date_first_record = date_first_record;
 };
 
 var url = new Settings("/drones?format=json");
@@ -30,29 +32,13 @@ request(Settings, function (error, response, dronesString) {
 	//console.log(drones);
 	console.log("***************************************************************************");
 	drones.forEach(function (response) {
-		var droneSettings = new Settings("/drones/" + drone.id + "?format=json")
+		var IdSettings = new Settings("/drones/" + drone.id + "?format=json")
 		request(droneSettings, function (error, response, droneString) {
 			var drone = JSON.parse(droneString);
-			droneMem.push(new Drone(drone.name, drone.mac_address));
+			droneMem.push(new Drone(drone.name, drone.mac_address, drone.id, date_first_record));
 			console.log(droneMem);
 			console.log("***************************************************************************");
 		});
 	});
 });
-request(Settings, function (error, response, dronesString) {
-	var drones = JSON.parse(dronesString);
-	console.log(drones);
-	console.log("***************************************************************************");
-	drones.forEach(function (drone) {
-		var droneSettings = new Settings("/drones/" + drone.id + "?format=json")
-		request(droneSettings, function (error, response, droneString) {
-			var drone = JSON.parse(droneString);
-                        setting
-			droneMem.push(new Drone(drone.name, drone.mac_address));
-			console.log(droneMem);
-			console.log("***************************************************************************");
-		});
-	});
-});
-
 console.log("Hello World!");
